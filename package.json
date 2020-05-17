@@ -13,8 +13,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "choropleth-leaflet-vectorgrid": "^0.0.1",
     "leaflet": "^1.6.0",
-    "naxa-test": "^1.0.25",
+    "naxa-test": "^1.0.27",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-leaflet": "^2.7.0"

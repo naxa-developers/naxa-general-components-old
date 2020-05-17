@@ -4,6 +4,13 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, number, color } from '@storybook/addon-knobs';
 
+const options = {
+    range: true,
+    min: 0,
+    max: 1,
+    step: 0.1,
+ };
+
 storiesOf('Vectorgrid', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
@@ -12,11 +19,11 @@ storiesOf('Vectorgrid', module)
   .add('Style', () => (
     <Vectorgrid 
         style = {{
-            opacity : number("Opacity", 1),
-            fillOpacity : number("Fill Opacity",1),
+            opacity : number("Opacity", 1, options),
+            fillOpacity : number("Fill Opacity",1, options),
             weight : number("Weight",1.5),
             color : color("Color","#FFFFFF"),
-            fillColor : color("Fill Color","#FFFFFF"),
+            //fillColor : color("Fill Color","#FFFFFF"),
             fill : boolean('Fill', true),
         }}
         onClick={action('click')}

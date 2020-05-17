@@ -50,7 +50,7 @@ class MapComponent extends Component {
         bounds={this.state.bounds}
         ref={this.mapRef}
         center={position}
-        style={{ height: 500, width:800}}
+        style={{ height: 370, width:800}}
         onClick={this.onClick}
         zoomSnap={0.5}
       >

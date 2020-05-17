@@ -2979,6 +2979,19 @@ chokidar@^3.4.0:
   optionalDependencies:
     fsevents "~2.1.2"
 
+choropleth-leaflet-vectorgrid@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/choropleth-leaflet-vectorgrid/-/choropleth-leaflet-vectorgrid-0.0.1.tgz#e907c3bdf0334b7f99c578fe8a15d7dbc6eeb76b"
+  integrity sha512-XixdViN3bz/sX893rzC3IJmbRTXZD6F+56cnUo/tX/0imh4H7RPnUtS6ZwmRzg9R9LRo42oXPDaZBOJZnFIJSQ==
+  dependencies:
+    gradstop "^2.2.3"
+    leaflet "^1.6.0"
+    react "^15.5.4"
+    react-dom "^16.13.1"
+    react-leaflet "^2.7.0"
+    react-leaflet-vectorgrid "^2.2.1"
+    webpack "^2.6.1"
+
 chownr@^1.1.1, chownr@^1.1.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"
@@ -6471,10 +6484,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-naxa-test@^1.0.25:
-  version "1.0.25"
-  resolved "https://registry.yarnpkg.com/naxa-test/-/naxa-test-1.0.25.tgz#b3c5c8dce0d00da512811b85d78c7326b44db489"
-  integrity sha512-O3TEhmd7suOi5fcwLo5dn8pkToWTMlPO9is09IxeKSGP1ZIHLgc0MI5jxPvJ2Y5rcVoVyK5COI60wNGU//ritA==
+naxa-test@^1.0.27:
+  version "1.0.27"
+  resolved "https://registry.yarnpkg.com/naxa-test/-/naxa-test-1.0.27.tgz#e764556a52793e9ad5c3c80bdbb68f35c314a8d2"
+  integrity sha512-f+OR+6QQk0nnSQH03DWDyEbakqaAg/iNgyf2Go7svRB93E9xb/fGWwfnKEXzQxJ1cA9cdLwwgtvEOIJ4zVrs+Q==
   dependencies:
     gradstop "^2.2.3"
     leaflet "^1.6.0"

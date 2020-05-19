@@ -166,28 +166,14 @@ class Select extends PureComponent {
     } = this;
 
     return (
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          width: '90%',
-          bottom: 0,
-          padding: '1%',
-        }}
-      >
+      <div className='select-search'>
         <input
           name='searchText'
           value={searchText}
           autoComplete='off'
           // placeholder="Search your keyword"
           onChange={(e) => searchHandler(e)}
-          style={{
-            width: '100%',
-            height: '100%',
-            border: 'transparent',
-            background: ' transparent',
-            outline: 'none',
-          }}
+          className='select-search-input'
           ref={(el) => (this.searchEl = el)}
         />
       </div>
@@ -245,7 +231,7 @@ class Select extends PureComponent {
           {...(!isMultiSelect &&
             !opt.disabled && { onClick: () => onClickHandler(opt) })}
         >
-          <div className='vr-checkbox' style={{ width: '100%' }}>
+          <div style={{ width: '100%' }}>
             {isMultiSelect && (
               <input
                 id={opt.value}
@@ -287,18 +273,18 @@ class Select extends PureComponent {
 
     return (
       <div
-        className={`custom-select ${showList ? 'show-dropdown' : ''}`}
+        className='select'
         onBlur={closeListHandler}
         tabIndex='1'
         style={{ outline: 'none' }}
       >
-        <span className='selected-item' onClick={toggleListHandler}>
+        <span className='select-title' onClick={toggleListHandler}>
           {!searchText && selectTitle}
         </span>
 
         {showList && withSearchBar && this.renderSearchBar()}
         {showList && (
-          <ul className='select-dropdown  left-dropdown'>
+          <ul className='select-dropdown'>
             {this.renderList(this.state.filteredOptions)}
           </ul>
         )}

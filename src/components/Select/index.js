@@ -4,7 +4,6 @@ import './index.scss';
 class Select extends PureComponent {
   static defaultProps = {
     title: 'Select',
-
     isMultiSelect: false,
     withSearchBar: false,
   };
@@ -13,7 +12,6 @@ class Select extends PureComponent {
     showList: false,
     searchText: '',
     selectTitle: this.props.title,
-
     masterOptions: this.props.options,
     filteredOptions: this.props.options,
     selectedOptions: [],
@@ -154,7 +152,7 @@ class Select extends PureComponent {
         this.props.onChange({
           target: {
             value: opt.value,
-            name: opt.label,
+            name: this.props.name ? this.props.name : opt.label,
           },
         })
     );
@@ -199,8 +197,7 @@ class Select extends PureComponent {
   renderList = (filteredOptions) => {
     const {
       // state: { filteredOptions },
-      props: { isMultiSelect, disabled, loader },
-      getId,
+      props: { isMultiSelect, loader },
       checkboxHandler,
       onClickHandler,
     } = this;
@@ -246,7 +243,7 @@ class Select extends PureComponent {
         <li
           key={opt.value}
           {...(!isMultiSelect &&
-            !disabled && { onClick: () => onClickHandler(opt) })}
+            !opt.disabled && { onClick: () => onClickHandler(opt) })}
         >
           <div className='vr-checkbox' style={{ width: '100%' }}>
             {isMultiSelect && (

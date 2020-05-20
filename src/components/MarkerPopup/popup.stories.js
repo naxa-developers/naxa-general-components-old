@@ -10,7 +10,7 @@ const options = {
     color: 'red'
 }
 
-storiesOf('PopUp-Sid', module)
+storiesOf('MarkerPopup', module)
     .addDecorator(withKnobs)
     .add('Default', () => (
         <PopUpButton label="With Button" onClick={action('click')} />
@@ -22,7 +22,8 @@ storiesOf('PopUp-Sid', module)
             imageUrl={text("Image URL", 'https://cdn3.iconfinder.com/data/icons/basicolor-arrows-checks/24/149_check_ok-512.png')}
             popupContent={text('PopUp Content', 'I am a marker popup')}
             enableButton={boolean("Enable Button", false)}
-            iconUrl={text("Marker Icon URL", "https://unpkg.com/leaflet@1.4.0/dist/images/marker-icon.png")}
+            buttonContent={text('Button Content', 'Click Here')}
+            // iconUrl={text("Marker Icon URL", "https://unpkg.com/leaflet@1.4.0/dist/images/marker-icon.png")}
             color={color("Text Color", "black")}
 
         />

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const PopUp = ({ withCheckbox, label }) => (
+const MarkerPopup = ({ withCheckbox, label }) => (
     <p>
         {withCheckbox && <input type="checkbox"></input>}
         {label}
     </p>
 );
 
-export default PopUp;
+export default MarkerPopup;

@@ -7,7 +7,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { color } from "@storybook/addon-knobs";
 import {
-    popButton
+    popButton, popupContentStyle, popupHead, popupText, okText
 } from './css/popupStyles';
 
 class MapComponent extends Component {
@@ -22,11 +22,13 @@ class MapComponent extends Component {
 
 
     render() {
-        const { imageUrl, popupContent, enableButton, iconUrl } = this.props;
+        const { imageUrl, popupContent, enableButton, iconUrl, buttonContent } = this.props;
         const center = [27.7, 85.4];
-        // const url = iconUrl !== '' ? iconUrl : 'https://unpkg.com/leaflet@1.4.0/dist/images/marker-icon.png'
+        // const url = iconUrl == '' || iconUrl === undefined ? iconUrl : 'https://unpkg.com/leaflet@1.4.0/dist/images/marker-icon.png'
+        // console.log("url", url);
+
         const defaultMarker = new L.icon({
-            iconUrl: iconUrl,
+            iconUrl: 'https://unpkg.com/leaflet@1.4.0/dist/images/marker-icon.png',
             iconSize: [27, 41],
             iconAnchor: [13, 0]
         });
@@ -52,7 +54,7 @@ class MapComponent extends Component {
                     <Marker position={center} icon={defaultMarker}>
                         <Popup className="request-popup">
                             <div
-                            // style={popupContent}
+                                style={popupContentStyle}
                             >
                                 <img
                                     src={imageUrl}
@@ -67,7 +69,7 @@ class MapComponent extends Component {
                                 {
                                     enableButton && <button
                                         style={popButton}
-                                    >Click me!</button>
+                                    >{buttonContent}</button>
                                 }
                             </div>
                         </Popup>

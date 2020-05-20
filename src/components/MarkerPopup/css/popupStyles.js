@@ -1,7 +1,7 @@
-const popupContent = {
+const popupContentStyle = {
     textAlign: "center",
-    height: "350px",
-    marginTop: "30px"
+    height: "110px",
+    marginTop: "10px"
 };
 const popupHead = {
     fontWeight: "bold",
@@ -26,7 +26,9 @@ const popButton = {
     textDecoration: 'none',
     display: 'inline-block',
     fontSize: '12px',
-    width: '80px'
+    width: '100px',
+    borderRadius: '4px'
+
 }
 
-export { popupContent, popupHead, popupText, okText, popButton };
+export { popupContentStyle, popupHead, popupText, okText, popButton };

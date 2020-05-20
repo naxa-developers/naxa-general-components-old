@@ -1,0 +1,88 @@
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin radius($value) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  -ms-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin box-shadow($content) {
+  -webkit-box-shadow: $content;
+  box-shadow: $content;
+}
+.select-dropdown{
+  &:not(:last-child){
+      margin-right: 10px;
+  }
+  position: relative;
+  a,
+  .span-label{
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid #ebebeb;
+      background: transparent;
+      @include transition(all .4s ease-in-out);
+      color: white;
+      display: block;
+      position: relative;
+      padding: 6px 24px 6px 12px;
+      @include radius(0);
+      text-transform: capitalize;
+      font-size: 14px;
+      @include radius(6px);
+      width: 200px;
+      
+      &:after{
+          @include transition(all .4s ease-in-out);
+          // content: 'arrow_drop_down';
+          font-family: 'Material Icons';
+          font-size: 24px;
+          color: #323132;
+          position: absolute;
+          right: 5px;
+          top: -2px;
+          text-transform: lowercase;
+
+      }
+      &:hover{
+          background: #FFF8E0;
+          color: black;
+          // border: 1px solid $red-color;
+      }
+      &.span-active{
+           &:after{
+              //  content: 'arrow_drop_up';
+           }
+      }
+  }
+  ul.select-list{
+      opacity: 0; 
+      height: 150px;
+      width: 200px;
+      // overflow-y: scroll;
+      top: 140%;
+      &.active{
+          opacity: 1;
+          top: 65%;
+      }
+      position: absolute;
+      // width: 100%;
+      background: #ffffff;
+      @include box-shadow(0 0 10px #BDBDBD);
+      @include transition(all .4s ease-in-out);
+     li.checkbox{
+       list-style: none;
+         label{
+             width: 100%;
+             padding: 6px 10px 6px 30px;
+         }
+
+     }
+  }
+}
+

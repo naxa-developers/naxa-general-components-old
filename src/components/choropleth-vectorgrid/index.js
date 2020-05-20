@@ -4,7 +4,7 @@ import {
 } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
- import VectorGrid from "naxa-test";
+import VectorGrid from "naxa-test";
 
 let map = {};
 class MapComponent extends Component {
@@ -18,7 +18,7 @@ class MapComponent extends Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -30,31 +30,31 @@ class MapComponent extends Component {
     var vectorGridInputUrl = "https://geoserver.naxa.com.np/geoserver/gwc/service/tms/1.0.0/Bipad:Province@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf";
     console.log(this.props.choroplethData, "choro")
     var key = null;
-    this.props.choroplethData != null && this.props.choroplethData.map((data) =>{
-        key = key+data.count;
+    this.props.choroplethData != null && this.props.choroplethData.map((data) => {
+      key = key + data.count;
     });
-    var currentComponent = this; 
-    this.props.style != null && Object.keys(this.props.style).map(function(key1, index) {
-        key = key+currentComponent.props.style[key1];
+    var currentComponent = this;
+    this.props.style != null && Object.keys(this.props.style).map(function (key1, index) {
+      key = key + currentComponent.props.style[key1];
     });
 
     return (
       <>
-      <Map
-        doubleClickZoom={this.props.zoomControl}
-        animate={true}
-        zoom={8}
-        maxZoom={18}
-        attributionControl
-        zoomControl
-        bounds={this.state.bounds}
-        ref={this.mapRef}
-        center={position}
-        style={{ height: 370, width:800}}
-        onClick={this.onClick}
-        zoomSnap={0.5}
-      >
-        <VectorGrid
+        <Map
+          doubleClickZoom={this.props.zoomControl}
+          animate={true}
+          zoom={8}
+          maxZoom={18}
+          attributionControl
+          zoomControl
+          bounds={this.state.bounds}
+          ref={this.mapRef}
+          center={position}
+          style={{ height: 370, width: 800 }}
+          onClick={this.onClick}
+          zoomSnap={0.5}
+        >
+          {/* <VectorGrid
         key={key}
            mapRef={this.mapRef}
         style={this.props.style !=null ? this.props.style : {
@@ -76,10 +76,10 @@ class MapComponent extends Component {
         legend = {true}
         // choroplethTitle = {"Covid Cases"}
         vectorGridUrl = {vectorGridInputUrl} //vectortile url setting
-        />
+        /> */}
 
-      </Map>
-    </>
+        </Map>
+      </>
     );
   }
 }

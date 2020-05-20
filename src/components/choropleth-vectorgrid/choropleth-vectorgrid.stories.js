@@ -2,7 +2,7 @@ import React from 'react';
 import Vectorgrid from './index.js';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, number, color } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, number, color, } from '@storybook/addon-knobs';
 
 const options = {
     range: true,
@@ -10,6 +10,9 @@ const options = {
     max: 1,
     step: 0.1,
  };
+
+
+
 
 storiesOf('Vectorgrid', module)
   .addDecorator(withKnobs)
@@ -44,6 +47,7 @@ storiesOf('Vectorgrid', module)
       onChange={action('change')}
       />
   ))
+
 
 //   .add('With Outline', () => (
 //     <Button

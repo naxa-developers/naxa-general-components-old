@@ -1,6 +1,8 @@
 import Button from './components/Button';
 import Badge from './components/Badge';
+import PopUp from './components/MarkerPopup'
+
 import Antpath from './components/Antpath';
 import ProgressBar from './components/ProgressBar'
 
-export { Button, Badge, Antpath, ProgressBar };
+export { Button, Badge, PopUp, Antpath, ProgressBar };

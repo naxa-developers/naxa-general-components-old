@@ -16,7 +16,8 @@ var data = [{
     data: [44, 76, 78, 13, 43, 10],
   }]
 var categories = ['2011', '2012', '2013', '2014', '2015', '2016']
-
+//var colors = ["#008ffb","#00e396","#feb019","#ff4560","#775dd0"]
+var colors = ["rgba(55, 61, 63,1)","rgba(0, 227, 150,1)","rgba(254, 176, 25,1)","rgba(255, 69, 96,1)","rgba(119, 93, 208,1)"]
 storiesOf('RadarChart', module)
   .addDecorator(withKnobs)
   // .add('Default', () => (
@@ -26,6 +27,7 @@ storiesOf('RadarChart', module)
     <RadarChart 
       data = {object('Data', data,'Data Knob')}
       categories = {object('Categories', categories,'Categories Knob')}
+      colors = {[color("Color1",colors[0]),color("Color2",colors[1]), color("Color3",colors[2]), color("Color4",colors[3])]}
       onChange={action('change')}
     />
     )

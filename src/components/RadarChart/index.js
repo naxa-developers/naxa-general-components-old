@@ -10,7 +10,7 @@ class RadarChart extends Component {
         }
     }
 
-    plotChart = (data, categories) =>{
+    plotChart = (data, categories, colors) =>{
       var options = {
         series: data,
         chart: {
@@ -23,6 +23,7 @@ class RadarChart extends Component {
             top: 1
           }
         },
+        colors: colors,
         title: {
           text: 'Radar Chart - Multi Series'
         },
@@ -65,8 +66,8 @@ class RadarChart extends Component {
 
     componentDidUpdate(prevProps, prevStates){
           console.log(this.props.data)
-          if(prevProps.data != this.props.data || prevProps.categories !== this.props.categories){
-            var options  = this.plotChart(this.props.data, this.props.categories);
+          if(prevProps.data != this.props.data || prevProps.categories !== this.props.categories || prevProps.colors !== this.props.colors){
+            var options  = this.plotChart(this.props.data, this.props.categories, this.props.colors);
             var chart = new ApexCharts(document.querySelector("#radarChart"), options);
             chart.render();
           }
@@ -82,6 +83,9 @@ class RadarChart extends Component {
         })
         this.props.categories.map(c =>{
           key = key + c;
+        })
+        this.props.colors.map(co =>{
+          key = key + co;
         })
         console.log(key);
         return (

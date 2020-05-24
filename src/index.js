@@ -4,7 +4,7 @@ import PopUp from './components/MarkerPopup'
 
 import Antpath from './components/Antpath';
 import ProgressBar from './components/ProgressBar';
-import Sankey from './components/Sankey';
-import TreeMap from './components/TreeMap'
+import TreeMap from './components/TreeMap';
+import MySankey from './components/Sankey-Nivo';
 
-export { Button, Badge, PopUp, Antpath, ProgressBar, Sankey,TreeMap };
+export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey };

@@ -24,7 +24,7 @@ storiesOf('TreeMap', module)
  
       innerPadding={number("InnterPadding",2)}
       outerPadding={number("OuterPadding",3)}
-      data={object("Data",data)}
+      data={object("Data",data,'Data Knob')}
       // data={data}
     />
 

@@ -29,6 +29,8 @@
     "react-fusioncharts": "^3.1.2",
     "react-google-charts": "^3.0.15",
     "react-leaflet": "^2.7.0",
+    "react-vis": "^1.11.7",
+    "treemap": "^1.0.4",
     "yarn": "^1.22.4"
   },
   "devDependencies": {

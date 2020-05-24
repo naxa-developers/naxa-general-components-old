@@ -29,7 +29,7 @@ class index extends Component {
             {this.props.data.map(a=>{
                 console.log(typeof a,a,"a")
             
-                return<ResponsiveTreeMap
+                return <ResponsiveTreeMap
                 key={Math.random()}
                
              

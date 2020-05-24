@@ -38,10 +38,10 @@ class MapComponent extends Component {
     this.props.style != null && Object.keys(this.props.style).map(function (key1, index) {
       key = key + currentComponent.props.style[key1];
     });
-    this.props.colorArray.map((color) => {
+    this.props.colorArray != null && this.props.colorArray.map((color) => {
       key = key+color;
     })
-    this.props.divisions.map((division) => {
+    this.props.divisions != null && this.props.divisions.map((division) => {
       key = key+division;
     })
 

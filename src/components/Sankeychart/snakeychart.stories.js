@@ -19,9 +19,9 @@ const options = {
   step: 4,
 };
 
-storiesOf('Snakey', module)
-  .addDecorator(withKnobs)
-  .add('default', () => (
+// storiesOf('Snakey', module)
+//   .addDecorator(withKnobs)
+//   .add('default', () => (
 
-    <Snakey/> 
-  ));
+//     <Snakey/> 
+//   ));

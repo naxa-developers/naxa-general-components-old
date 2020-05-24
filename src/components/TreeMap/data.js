@@ -1,4 +1,4 @@
-let  data=[
+var  data=[
 {
     "name": "Rohit",
     "color": "hsl(179, 70%, 50%)",

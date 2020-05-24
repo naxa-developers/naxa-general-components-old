@@ -15,6 +15,7 @@ class MySankey extends Component {
             nodeBorderColor: { from: 'color', modifiers: [['darker', 0.8]] },
             linkOpacity: 0.5,
             linkHoverOthersOpacity: 0.1,
+            linkBlendMode: "normal",
             enableLinkGradient: true,
             labelPadding: 16,
             motionStiffness: 140,

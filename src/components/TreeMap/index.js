@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ResponsiveTreeMap } from '@nivo/treemap'
-import data from './data'
 
 class index extends Component {
 
@@ -17,11 +16,7 @@ class index extends Component {
         console.log(this.props)
     }
 
- 
-
-
-
-        
+  
 
     
     render() {
@@ -38,7 +33,7 @@ class index extends Component {
                 key={Math.random()}
                
              
-                root={typeof a=='string'?JSON.parse(a):a}
+                root={a}
                 identity="name"
                 value="loc"
                 innerPadding={this.props.innerPadding}
@@ -58,7 +53,6 @@ class index extends Component {
              }) 
             
             }
-             {console.log(data,"da")}
             </>
           
 

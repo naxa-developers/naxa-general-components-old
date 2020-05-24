@@ -6,5 +6,6 @@ import Antpath from './components/Antpath';
 import ProgressBar from './components/ProgressBar';
 import TreeMap from './components/TreeMap';
 import MySankey from './components/Sankey-Nivo';
+import RadarChart from './components/RadarChart';
 
-export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey };
+export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart };

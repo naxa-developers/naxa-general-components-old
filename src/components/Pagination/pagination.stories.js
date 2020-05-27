@@ -24,7 +24,7 @@ storiesOf('Pagination', module)
     .addDecorator(withKnobs)
     .add('Default', () => (
         <Wrapper
-        data={array("Data",["Harka Man","Birkhe", "Bala Bahadhur", "Shyam Sundar","Ram Bahadur","Rata mate Kaila", "Saila Baje"])}
+        data={array("Data",["Harka Man","Birkhe", "Bala Bahadhur", "Shyam Sundar","Ram Bahadur","Gumane", "Goddatta Prasad"])}
         numberInEachPage={number("Number of data per page",2)}
         color={text("Color","White")}
         backgroundColor={text("BackgroundColor for inactive page","transparent")}

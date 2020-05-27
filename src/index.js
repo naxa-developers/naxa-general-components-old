@@ -9,4 +9,6 @@ import MySankey from './components/Sankey-Nivo';
 import RadarChart from './components/RadarChart';
 import Pagination from './components/Pagination'
 
-export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart, Pagination };
+import DynamicTreemapExample from './components/TreemapSquarifiedLayout';
+
+export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart,  DynamicTreemapExample,Pagination};

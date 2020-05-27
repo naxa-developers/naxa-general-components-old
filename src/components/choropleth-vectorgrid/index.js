@@ -38,6 +38,12 @@ class MapComponent extends Component {
     this.props.style != null && Object.keys(this.props.style).map(function (key1, index) {
       key = key + currentComponent.props.style[key1];
     });
+    this.props.colorArray != null && this.props.colorArray.map((color) => {
+      key = key+color;
+    })
+    this.props.divisions != null && this.props.divisions.map((division) => {
+      key = key+division;
+    })
 
     return (
       <>
@@ -71,8 +77,8 @@ class MapComponent extends Component {
             choroplethData={this.props.choroplethData != null ? this.props.choroplethData : [{ id: 1, count: 10 }, { id: 2, count: 2 }, { id: 3, count: 3 }, { id: 4, count: 4 }, { id: 5, count: 5 }, { id: 6, count: 6 }, { id: 7, count: 7 }]}  //
             //color="#0000FF" //single color gradient - to make this active dont pass colorArray
             // legendDivisions = {10} //no of divisions in legend
-            colorArray={["#fff3d4", "#FED976", "#FEB24C", "#FD8D3C", "#FC4E2A", "#E31A1C", "#BD0026", "#800026"]} //multi color custom gradient
-            // divisions = {[0,5,10,15,20,25,30]}
+            colorArray={this.props.colorArray} //multi color custom gradient
+            divisions = {this.props.divisions}
             //label = {true}
             legend={true}
             // choroplethTitle = {"Covid Cases"}

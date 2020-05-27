@@ -16,6 +16,7 @@
     "@nivo/generators": "^0.61.0",
     "@nivo/sankey": "^0.61.2",
     "@nivo/treemap": "^0.61.0",
+    "apexcharts": "^3.19.2",
     "choropleth-leaflet-vectorgrid": "^0.0.1",
     "esri-leaflet-geocoder": "^2.3.2",
     "fusioncharts": "^3.15.1-sr.1",
@@ -28,6 +29,8 @@
     "react-fusioncharts": "^3.1.2",
     "react-google-charts": "^3.0.15",
     "react-leaflet": "^2.7.0",
+    "react-vis": "^1.11.7",
+    "treemap": "^1.0.4",
     "yarn": "^1.22.4"
   },
   "devDependencies": {

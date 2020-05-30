@@ -11,5 +11,6 @@ import RadarChart from './components/RadarChart';
 import Pagination from './components/Pagination'
 
 import DynamicTreemapExample from './components/TreemapSquarifiedLayout';
+import MySlider from './components/Slider';
 
-export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart,  DynamicTreemapExample,Pagination, Preloaders};
+export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart,  DynamicTreemapExample,Pagination, Preloaders, MySlider};

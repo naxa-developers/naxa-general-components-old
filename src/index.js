@@ -12,5 +12,6 @@ import Pagination from './components/Pagination'
 
 import DynamicTreemapExample from './components/TreemapSquarifiedLayout';
 import MySlider from './components/Slider';
+import Switch from './components/Switch';
 
-export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart, DynamicTreemapExample, Pagination, Preloaders, MySlider };
+export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart, DynamicTreemapExample, Pagination, Preloaders, MySlider, Switch };

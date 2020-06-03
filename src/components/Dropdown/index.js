@@ -23,7 +23,6 @@ class Components extends Component {
     console.log(selected, 'selected');
     return (
       <div>
-        <label>Dropdown</label>
         <Dropdown
           data={data}
           styleClass={styleClass}
@@ -32,11 +31,11 @@ class Components extends Component {
           placeholder={placeholder}
           onChange={this.handleDropdown}
         />
-        <label class="selectedValue form-dropdown">
+        {/* <label class="selectedValue form-dropdown">
           Selected Option ==&gt;
           <label></label>
           {selected && selected[0] && selected[0].label}
-        </label>
+        </label> */}
       </div>
     );
   }

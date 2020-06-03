@@ -18,10 +18,20 @@ export class index extends Component {
             width: `${this.props.width ? this.props.width : this.state.width}px`,
             height: `${this.props.height ? this.props.height : this.state.height}px`,
             borderTop: `${this.props.borderWidth ? this.props.borderWidth : this.state.borderWidth}px solid ${this.props.color ? this.props.color : this.state.color}`,
+            animationName: 'spin',
+            animationIterationCount: 'infinite',
+            animationTimingFunction: 'linear',
+            animationDuration: '3s',
+            borderRadius: '50%'
         }
         const imageStyle={
             width: `${this.props.width ? this.props.width : this.state.width}px`,
-            height: `${this.props.height ? this.props.height : this.state.height}px`
+            height: `${this.props.height ? this.props.height : this.state.height}px`,
+            animationName: 'spin',
+            animationIterationCount: 'infinite',
+            animationTimingFunction: 'linear',
+            animationDuration: '3s',
+            position: 'relative'
         }
         return (
             <>

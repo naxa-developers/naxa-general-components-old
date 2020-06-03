@@ -4,27 +4,35 @@ import './cards.scss'
 export class index extends Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            title: 'Card Title',
+            description: 'I am simple card.',
+            tag: 'Card'
+        }
     }
     
-    renderDefault() {
+    render() {
+        const style={
+            height: '100%',
+            width: '100%'
+        }
+        const title = this.props.title ? this.props.title : this.state.title
+        const description = this.props.description ? this.props.description : this.state.description
+        const tag = this.props.tag ? this.props.tag : this.state.tag
         return (
             <section className="cards-wrapper">
                 <div className="card">
+                    {this.props.image && <img src={this.props.image} style={style}/>}
                     <div>
-                        <h1>Card Title</h1>
-                        <p>I am simple card.</p>
+                        <h1>{title}</h1>
+                        <p>{description}</p>
                         <div className='tags'>
-                            <div className="tag">ReactJS</div>
+                            <div className="tag">{tag}</div>
                         </div>
                     </div>
                 </div>
             </section>
         )
-    }
-
-    render(){
-        if(this.props.mode === 'default') return this.renderDefault()
     }
 }
 

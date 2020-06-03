@@ -1,36 +1,74 @@
-button {
-  padding: 20px;
-  width: 20em;
-  margin: 10px;
-  color: white;
-  font-size: 19px;
-  cursor: pointer;
-  border: 2px solid #fecd43;
-  background: #fecd43;
-}
+.dropdown{
+  .btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  }
+  .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    width: 178px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+  }
+  .btn .caret {
+    margin-left: 0;
+  }
 
-button[disabled] {
-  background: gray;
-  border: gray;
-  cursor: not-allowed;
-}
-.form-group{
-  padding: 20px;
-}
-.selectedValue{
-  color : white;
-  // margin: 200px;
-}
-select{
-  width: 160px;
-}
-.form-dropdown{
-  background: black;
-    padding: 3px;
-    color: white;
-}
-
-.custom-dropdown{
- background-color: green;
- width: 90px;
+  .caret {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      vertical-align: middle;
+      border-top: 4px dashed;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+  }
+  .dropdown-menu {
+    position: absolute;
+    left: 17px;
+    z-index: 1000;
+    display: none;
+    width: 178px;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  }
+  .dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .dropdown-menu>li>a:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
+  }
 }

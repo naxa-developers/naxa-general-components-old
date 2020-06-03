@@ -1,0 +1,41 @@
+.cards-wrapper{
+    background-color: white;
+    font-family: 'Open Sans';
+    box-sizing: border-box;
+    padding: 64px;
+    margin: 0 auto;
+    width: max-content;
+}
+.card {
+    height: 100%;
+    width: 240px;
+    font-size: 24px;
+    color: rgb(2, 2, 2);
+    border-radius: 16px;
+    padding: 16px;
+    // display: flex;
+    align-items: flex-end;
+    box-shadow: 0 0 15px 0.5px rgb(56, 55, 55);
+    position: relative;
+    border: 8px solid rgb(224, 222, 222);
+}
+.card h1 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.2em;
+}
+.card p {
+    font-size: 12px;
+    margin-top: 8px;
+    line-height: 32px;
+}
+.card .tags{
+    display: flex;
+}
+.card .tags .tag{
+    font-size: 12px;
+    background-color: grey;
+    padding: 1px;
+    margin-right: 4px;
+    border-radius: 4px;
+}

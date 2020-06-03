@@ -28,6 +28,12 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
         include: path.resolve(__dirname, './src'),
       },
+      {
+        test: /\.(jpg|png|gif|svg)$/,
+        use: {
+            loader: 'file-loader'
+        }
+    }
     ],
   },
 };

@@ -4,9 +4,16 @@ import PopUp from './components/MarkerPopup'
 
 import Antpath from './components/Antpath';
 import ProgressBar from './components/ProgressBar';
+import Preloaders from './components/PreLoaders';
 import TreeMap from './components/TreeMap';
 import MySankey from './components/Sankey-Nivo';
 import RadarChart from './components/RadarChart';
-import DynamicTreemapExample from './components/TreemapSquarifiedLayout';
+import Pagination from './components/Pagination'
+import FloatingButton from './components/FloatingButton'
 
-export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart,  DynamicTreemapExample};
+import DynamicTreemapExample from './components/TreemapSquarifiedLayout';
+import MySlider from './components/Slider';
+import Switch from './components/Switch';
+import Cards from './components/Cards'
+
+export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart, DynamicTreemapExample, Pagination, Preloaders, MySlider, Switch, FloatingButton, Cards };

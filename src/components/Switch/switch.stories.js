@@ -16,5 +16,6 @@ storiesOf('Switch', module)
     .add('With Label', () => <Switch
         sliderClass='slider round'
         showLabel={true}
+    // onColor={color("Slider On Color", "black")}
 
     />)

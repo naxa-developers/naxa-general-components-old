@@ -12,7 +12,7 @@ class Switch extends Component {
 
 
     render() {
-        const { sliderClass, showLabel } = this.props;
+        const { sliderClass, showLabel, onColor } = this.props;
         return (
             <>
                 <div>

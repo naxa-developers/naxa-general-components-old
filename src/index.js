@@ -14,6 +14,7 @@ import FloatingButton from './components/FloatingButton'
 import DynamicTreemapExample from './components/TreemapSquarifiedLayout';
 import MySlider from './components/Slider';
 import Switch from './components/Switch';
-import Cards from './components/Cards'
+import Cards from './components/Cards';
+import MapComponent from './components/mapbox-choropleth';
 
-export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart, DynamicTreemapExample, Pagination, Preloaders, MySlider, Switch, FloatingButton, Cards };
+export { Button, Badge, PopUp, Antpath, ProgressBar, TreeMap, MySankey, RadarChart, DynamicTreemapExample, Pagination, Preloaders, MySlider, Switch, FloatingButton, Cards, MapComponent };

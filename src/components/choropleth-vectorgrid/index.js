@@ -4,7 +4,7 @@ import {
 } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
-import VectorGrid from "naxa-test";
+import VectorGrid from "./vectorgrid";
 
 let map = {};
 class MapComponent extends Component {

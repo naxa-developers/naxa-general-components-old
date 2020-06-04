@@ -18,6 +18,7 @@
     "@nivo/sankey": "^0.61.2",
     "@nivo/treemap": "^0.61.0",
     "apexcharts": "^3.19.2",
+    "bootstrap": "^4.5.0",
     "choropleth-leaflet-vectorgrid": "^0.0.1",
     "esri-leaflet-geocoder": "^2.3.2",
     "fusioncharts": "^3.15.1-sr.1",
@@ -31,6 +32,7 @@
     "react-fusioncharts": "^3.1.2",
     "react-google-charts": "^3.0.15",
     "react-leaflet": "^2.7.0",
+    "react-loader-spinner": "^3.1.14",
     "react-vis": "^1.11.7",
     "treemap": "^1.0.4",
     "yarn": "^1.22.4"
@@ -50,6 +52,7 @@
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "sass-loader": "^8.0.2",
+    "storybook-readme": "^5.0.8",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-node-externals": "^1.7.2"

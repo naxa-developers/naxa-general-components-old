@@ -95,7 +95,7 @@ class MigrationLines extends Component {
         bearing(center, originpoint)
         );
 
-        console.log(lA, "lalalala");
+        // console.log(lA, "lalalala");
 
         // var start = turf.point(originpoint);
         // var end = turf.point(destinationpoint);
@@ -108,7 +108,7 @@ class MigrationLines extends Component {
       // // Draw an arc between the `origin` & `destination` of the two points
       for (var i = 0; i < lineDistance; i += lineDistance / step) {
           var segment = turf.along(lA, i, {units: 'kilometers'});
-          arc.push(segment.geometry.coordinates);
+          arc.unshift(segment.geometry.coordinates);
       }
       //console.log(arc, "arc")
 
@@ -121,7 +121,7 @@ class MigrationLines extends Component {
     //console.log(point, "point")
     // Used to increment the value of the point measurement against the route.
 
-    this.setState({counter:route.features[0].geometry.coordinates.length-1})
+    this.setState({counter:0})
     this.setState({points: point});
     this.setState({routes: route});
     this.setState({steps: step})
@@ -188,12 +188,12 @@ class MigrationLines extends Component {
       data.properties.bearing = turf.bearing(
           turf.point(
               route.features[index].geometry.coordinates[
-                  count <= step ? count - 1 : count
+                  count >= step ? count + 1 : count
               ]
           ),
           turf.point(
               route.features[index].geometry.coordinates[
-                  count <= step ? count : count - 1
+                  count >= step ? count : count + 1
               ]
           )
       );
@@ -203,13 +203,13 @@ class MigrationLines extends Component {
       map.getSource('point').setData(point);
 
       // Request the next frame of animation so long the end has not been reached.
-      if (count > 0) {
+      if (count <= step) {
           //console.log("entered again")
           requestAnimationFrame(this.animate);
       }
       //console.log(point, "point below")
     
-      this.setState({counter: count-1})
+      this.setState({counter: count+1})
       this.setState({points:point})
       this.setState({routes:route})
     })

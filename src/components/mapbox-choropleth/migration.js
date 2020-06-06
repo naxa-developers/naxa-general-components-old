@@ -15,6 +15,10 @@ class MigrationLines extends Component {
     super(props);
     this.state = {
       counter: 0,
+      points:{},
+      routes:{},
+      map:{},
+      steps:0,
     };
   }
 
@@ -37,7 +41,7 @@ class MigrationLines extends Component {
       // Number of steps to use in the arc and animation, more steps means
       // a smoother arc and animation, but too many steps will result in a
       // low frame rate
-      var steps = 500;
+      var step = 500;
 
 
 
@@ -91,7 +95,7 @@ class MigrationLines extends Component {
         bearing(center, originpoint)
         );
 
-        console.log(lA, "lalalala");
+        // console.log(lA, "lalalala");
 
         // var start = turf.point(originpoint);
         // var end = turf.point(destinationpoint);
@@ -102,22 +106,25 @@ class MigrationLines extends Component {
       var lineDistance = turf.length(lA, {units: 'kilometers'});
 
       // // Draw an arc between the `origin` & `destination` of the two points
-      for (var i = 0; i < lineDistance; i += lineDistance / steps) {
+      for (var i = 0; i < lineDistance; i += lineDistance / step) {
           var segment = turf.along(lA, i, {units: 'kilometers'});
-          arc.push(segment.geometry.coordinates);
+          arc.unshift(segment.geometry.coordinates);
       }
-      console.log(arc, "arc")
+      //console.log(arc, "arc")
 
       // // Update the route with calculated arc coordinates
        route.features[index].geometry.coordinates = arc;
       
     });
 
-    console.log(route, "route")
-    console.log(point, "point")
+    //console.log(route, "route")
+    //console.log(point, "point")
     // Used to increment the value of the point measurement against the route.
-    var counter = route.features[0].geometry.coordinates.length-1;
-    this.setState({counter:counter})
+
+    this.setState({counter:0})
+    this.setState({points: point});
+    this.setState({routes: route});
+    this.setState({steps: step})
     const that = this;
     map.on('load', function() {
         // Add a source and layer displaying a point which will be animated in a circle.
@@ -155,44 +162,58 @@ class MigrationLines extends Component {
         });
 
         // Start the animation.
-        that.animate(counter, point, route, steps, map);
+        that.animate();
     });
 
   }
 
 
-  animate = (counter, point, route, steps, map) => {
+  animate = () => {
+    var count = this.state.counter;
+    var point = this.state.points;
+    var route = this.state.routes;
+    const map = this.state.map;
+    var step = this.state.steps;
+    
     // Update point geometry to a new position based on counter denoting
     // the index to access the arc.
-    point.features[0].geometry.coordinates =
-        route.features[0].geometry.coordinates[counter];
-    console.log(route, "coordinates is required")
-    // Calculate the bearing to ensure the icon is rotated to match the route arc
-    // The bearing is calculate between the current point and the next point, except
-    // at the end of the arc use the previous point and the current point
-    point.features[0].properties.bearing = turf.bearing(
-        turf.point(
-            route.features[0].geometry.coordinates[
-                counter <= steps ? counter - 1 : counter
-            ]
-        ),
-        turf.point(
-            route.features[0].geometry.coordinates[
-                counter <= steps ? counter : counter - 1
-            ]
-        )
-    );
-    
-    console.log(counter, "counter")
-    // Update the source with this new data.
-    map.getSource('point').setData(point);
+    //console.log(map, "map again")
+    point.features.map((data, index) => {
+      data.geometry.coordinates =
+          route.features[index].geometry.coordinates[count];
+      //console.log(count, "coordinates is required")
+      // Calculate the bearing to ensure the icon is rotated to match the route arc
+      // The bearing is calculate between the current point and the next point, except
+      // at the end of the arc use the previous point and the current point
+      data.properties.bearing = turf.bearing(
+          turf.point(
+              route.features[index].geometry.coordinates[
+                  count >= step ? count + 1 : count
+              ]
+          ),
+          turf.point(
+              route.features[index].geometry.coordinates[
+                  count >= step ? count : count + 1
+              ]
+          )
+      );
+      
+      //console.log(count, "count")
+      // Update the source with this new data.
+      map.getSource('point').setData(point);
 
-    // Request the next frame of animation so long the end has not been reached.
-    if (counter < steps) {
-        requestAnimationFrame(animate);
-    }
-    console.log(counter, "counter")
-    counter = counter - 1;
+      // Request the next frame of animation so long the end has not been reached.
+      if (count <= step) {
+          //console.log("entered again")
+          requestAnimationFrame(this.animate);
+      }
+      //console.log(point, "point below")
+    
+      this.setState({counter: count+1})
+      this.setState({points:point})
+      this.setState({routes:route})
+    })
+    //count = count - 1;
 }
 
 animateMarker = () => {
@@ -217,6 +238,7 @@ animateMarker = () => {
   componentDidMount() {
     const migrationData = this.props.migrationData; 
     const map = this.props.map;
+    this.setState({map:map})
     this.plotMigration(map, migrationData);
   }
 

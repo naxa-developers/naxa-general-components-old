@@ -3,6 +3,8 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/src/css/mapbox-gl.css'
 import './mapbox-choropleth.scss';
 import Choropleth from './mapbox-choropleth';
+import MarkerCluster from './markerCluster';
+import MigrationLines from './migration';
 
 class MapComponent extends Component {
   constructor(props) {
@@ -18,7 +20,67 @@ class MapComponent extends Component {
         { 'code': '6', 'count': 7.52 },
         { 'code': '7', 'count': 6.44 }
         ],
-        maxValue: 13,
+        geojsonData: {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {"name":"marker1"},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  84.0234375,
+                  27.68352808378776
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {"name":"marker2"},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  85.7373046875,
+                  27.371767300523047
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {"name":"marker3"},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  87.14355468749999,
+                  26.980828590472107
+                ]
+              }
+            }
+          ]
+        },
+        migrationData: [
+          {
+            originName: "Origin1",
+            destinationName: "destination1",
+            origin: [87,28],
+            destination:[88,20],
+            size: 2
+          },
+          {
+            originName: "Origin1",
+            destinationName: "destination2",
+            origin: [87,28],
+            destination:[85,29],
+            size: 2
+          },
+          {
+            originName: "Origin1",
+            destinationName: "destination3",
+            origin: [87,28],
+            destination:[75,28.5],
+            size: 2
+          }
+        ]
     };
   }
 
@@ -27,7 +89,7 @@ class MapComponent extends Component {
     const map = new mapboxgl.Map({
     container: 'mapBoxMap',
     style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    center: [85.5,27.5], // starting position [lng, lat]
+    center: [84.0,27.5], // starting position [lng, lat]
     zoom: 5 // starting zoom
     });
     this.setState({map:map});
@@ -43,7 +105,7 @@ class MapComponent extends Component {
   render() {
     return (
         <div id="mapBoxMap">
-            {this.state.map && <Choropleth 
+            {this.state.map && <div><Choropleth 
                 map = {this.state.map}
                 choroplethData = {this.state.choroplethData}
                 // maxValue = {this.state.maxValue}
@@ -54,6 +116,15 @@ class MapComponent extends Component {
                 vectorTileUrl = "https://vectortile.naxa.com.np/federal/province.mvt/?tile={z}/{x}/{y}"
             >
             </Choropleth>
+            <MarkerCluster
+              map = {this.state.map}
+              geojsonData = {this.state.geojsonData}
+            />
+            <MigrationLines
+              map ={this.state.map}
+              migrationData = {this.state.migrationData}
+            />
+            </div>
             }
         </div>
     )

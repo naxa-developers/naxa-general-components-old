@@ -103,8 +103,8 @@ setChoroplethStyle(values){
         // Add Mapillary sequence layer.
         // https://www.mapillary.com/developer/tiles-documentation/#sequence-layer
         map.addSource('municipality', {
-        'type': 'vector',
-        'tiles': [that.props.vectorTileUrl?that.props.vectorTileUrl:"https://vectortile.naxa.com.np/federal/province.mvt/?tile={z}/{x}/{y}"],
+        'type': 'vector', 
+        'tiles': [that.props.vectorTileUrl?that.props.vectorTileUrl:"https://apps.naxa.com.np/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=Naxa:educationpoint&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}"],//"https://vectortile.naxa.com.np/federal/province.mvt/?tile={z}/{x}/{y}"],
         'minzoom': 0,
         'maxzoom': 20
         });
@@ -143,6 +143,7 @@ setChoroplethStyle(values){
                 "source-layer": "default",
                 "layout": {
                     "text-field": ['get', 'name'],
+                    'icon-image': ['concat', ['get', 'icon'], '-15'],
                     "text-anchor": 'center',
                     "text-offset": [0,0],
                     "symbol-placement": "point",
@@ -155,12 +156,13 @@ setChoroplethStyle(values){
                 "text-halo-width": 1.5,
                 "text-halo-blur": 1,
                 }
-            });
-          }
-          
-
-        });
-            
+              })
+           }
+          // var bounds = coordinates.reduce(function(bounds, coord) {
+          //   return bounds.extend(coord);
+          //   }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
+          // map.fitBounds() 
+          })  
         map.addControl(new mapboxgl.NavigationControl());
   }
 
@@ -172,6 +174,7 @@ setChoroplethStyle(values){
     if(prevState.finalStyle != this.state.finalStyle){
         console.log("entered")
         this.plotVectorTile();
+        
     }
   }
 

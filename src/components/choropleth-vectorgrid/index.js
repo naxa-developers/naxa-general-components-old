@@ -28,7 +28,7 @@ class MapComponent extends Component {
 
   render() {
     const position = [27.7, 85.4];
-    var vectorGridInputUrl = "https://geoserver.naxa.com.np/geoserver/gwc/service/tms/1.0.0/Bipad:Province@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf";
+    var vectorGridInputUrl = "https://apps.naxa.com.np/geoserver/gwc/service/tms/1.0.0/Naxa:educationpoint@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf";
     console.log(this.props.choroplethData, "choro")
     var key = null;
     this.props.choroplethData != null && this.props.choroplethData.map((data) => {

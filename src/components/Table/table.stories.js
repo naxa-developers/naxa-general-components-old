@@ -24,7 +24,14 @@ storiesOf('Table', module)
       <TableHeader dataField="capital" />
     </Table>
   ))
-  .add('With Customization', () => (
+  .add('With Custom Header', () => (
+    <Table data={data}>
+      <TableHeader dataField="country" dataHeader="cn" />
+      <TableHeader dataField="capital" dataHeader="city" />
+      <TableHeader dataField="gdp" />
+    </Table>
+  ))
+  .add('With Customized Data', () => (
     <Table data={data}>
       <TableHeader dataField="country" />
       <TableHeader dataField="capital" />

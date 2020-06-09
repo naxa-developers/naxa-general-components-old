@@ -19,18 +19,38 @@ export default class Table extends Component {
     return Object.keys(this.props.data[0]);
   };
 
-  getCellData = (row, field) => {
+  getHeaderData = (field) => {
     const numberOfChildren = Children.count(this.props.children);
     if (numberOfChildren > 0) {
       const tableChildren = Children.toArray(this.props.children);
-      const tableChildWithSameFieldAndDataForma = tableChildren.find(
+      const tableChildWithSameFieldAndDataHeader = tableChildren.find(
+        (child) =>
+          child.props.dataField === field &&
+          child.props.hasOwnProperty('dataHeader')
+      );
+
+      if (!!tableChildWithSameFieldAndDataHeader) {
+        return tableChildWithSameFieldAndDataHeader.props.dataHeader;
+      }
+
+      return field;
+    }
+
+    return field;
+  };
+
+  getBodyCellData = (row, field) => {
+    const numberOfChildren = Children.count(this.props.children);
+    if (numberOfChildren > 0) {
+      const tableChildren = Children.toArray(this.props.children);
+      const tableChildWithSameFieldAndDataFormat = tableChildren.find(
         (child) =>
           child.props.dataField === field &&
           child.props.hasOwnProperty('dataFormat')
       );
 
-      if (!!tableChildWithSameFieldAndDataForma) {
-        return tableChildWithSameFieldAndDataForma.props.dataFormat(
+      if (!!tableChildWithSameFieldAndDataFormat) {
+        return tableChildWithSameFieldAndDataFormat.props.dataFormat(
           row,
           row[field]
         );
@@ -46,7 +66,7 @@ export default class Table extends Component {
     const fields = this.getFields();
 
     return fields.map((field, index) => {
-      return <th key={field}>{field.toUpperCase()}</th>;
+      return <th key={field}>{this.getHeaderData(field).toUpperCase()}</th>;
     });
   };
 
@@ -57,7 +77,7 @@ export default class Table extends Component {
       return (
         <tr key={index}>
           {fields.map((field) => {
-            return <td key={row[field]}>{this.getCellData(row, field)}</td>;
+            return <td key={row[field]}>{this.getBodyCellData(row, field)}</td>;
           })}
         </tr>
       );

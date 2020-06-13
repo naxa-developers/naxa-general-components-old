@@ -48,6 +48,7 @@ class index extends Component {
  
     
     render() {
+        console.log(this.props)
         return (
             <div class="main-div-pagination"  >
                 <div class="num-div" style={{border:'none',opacity:this.props.activePage!=0?1:0.2}}  onClick={()=>{

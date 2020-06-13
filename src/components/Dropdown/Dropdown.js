@@ -15,21 +15,32 @@ const Dropdown = ({
   };
 
   return (
-    <div className={`form-group ${styleClass}`} >
-      <select
-        value={value}
-        className="form-control"
-        style={style}
-        onChange={handleChange}
-      >
-        <option value="">{placeholder}</option>
-        {data.map((item, key) => (
-          <option key={Math.random()} value={item.value}>
-            {item.label}
-          </option>
-        ))}
-      </select>
+    <div class="dropdown open">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Dropdown Example
+        <span class="caret"></span>
+      </button>
+      <ul style={{display:'block'}} class="dropdown-menu">
+      {data.map((item, key) => (
+        <li><a href="#">{item.label}</a></li>
+      ))}
+      </ul>
     </div>
+    // <div className={`form-group ${styleClass}`} >
+    //   <select
+    //     value={value}
+    //     className="form-control"
+    //     style={style}
+    //     onChange={handleChange}
+    //   >
+    //     <option value="">{placeholder}</option>
+    //     {data.map((item, key) => (
+    //       <option key={Math.random()} value={item.value}>
+    //         {item.label}
+    //       </option>
+    //     ))}
+    //   </select>
+    // </div>
   );
 };
 

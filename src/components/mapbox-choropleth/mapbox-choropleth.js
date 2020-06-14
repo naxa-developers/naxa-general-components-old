@@ -3,7 +3,15 @@ import mapboxgl from 'mapbox-gl'
 
 import {label_Vector_Tiles, calculateRange, handleZoom, choroplethColorArray, getProvinceName} from "./Functions";
 
-
+const defaultData = [
+  { 'code': '1', 'count': 13.17 },
+  { 'code': '2', 'count': 9.5 },
+  { 'code': '3', 'count': 12.15 },
+  { 'code': '4', 'count': 8.99 },
+  { 'code': '5', 'count': 11.83 },
+  { 'code': '6', 'count': 7.52 },
+  { 'code': '7', 'count': 6.44 }
+  ];
 class Choropleth extends Component {
   constructor(props) {
     super(props);

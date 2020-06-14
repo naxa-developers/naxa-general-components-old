@@ -29,7 +29,7 @@ storiesOf('CirclePack', module).addDecorator(withKnobs)
    borderWidth={number('borderWidth',1)}
    root={object('data',root)}
 
-
+   onChange={action('change')}
    
    />
 

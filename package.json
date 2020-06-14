@@ -14,7 +14,7 @@
   "description": "",
   "dependencies": {
     "@material-ui/core": "^4.10.0",
-    "@nivo/circle-packing": "^0.62.0",
+    "@nivo/circle-packing": "^0.61.0",
     "@nivo/generators": "^0.61.0",
     "@nivo/sankey": "^0.61.2",
     "@nivo/sunburst": "^0.62.0",

@@ -13,7 +13,8 @@ class index extends Component {
         return (
             <div style={{width:400,height:400}}>
                 <ResponsiveBubble
-                key={this.props.root}
+                // key={this.props.root}
+                key={Math.random()}
             
                     root={this.props.root}
                     margin={{ top: 20, right: 20, bottom: 20, left: 20 }}

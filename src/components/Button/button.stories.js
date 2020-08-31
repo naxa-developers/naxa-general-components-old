@@ -6,6 +6,11 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
+  .addParameters({
+    info: {
+      text: `This is Button component.`,
+    },
+  })
   .add('Default', () => (
     <Button
       label={text('label', 'My Button')}
